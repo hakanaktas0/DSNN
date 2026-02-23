@@ -1,0 +1,93 @@
+program: exp/run.py
+method: random
+metric:
+  name: val_acc
+  goal: maximize
+parameters:
+  model:
+    distribution: categorical
+    values: ["BundleSheaf", "GeneralSheaf", "DiagSheaf"]
+  d:
+    distribution: categorical
+    values: [2,3,4,5]
+  add_lp:
+    distribution: categorical
+    values: [0,1]
+  add_hp:
+    distribution: categorical
+    values: [0, 1]
+  dataset:
+    distribution: categorical
+    values: ['texas',"cornell","wisconsin"]
+  layers:
+    distribution: categorical
+    values: [2,3]
+  hidden_channels:
+    distribution: categorical
+    values: [8, 16, 32]
+  weight_decay:
+    distribution: constant
+    value: 0.0006914841722570725
+  sheaf_decay:
+    distribution: constant
+    value: 0.00031764232712732976
+  input_dropout:
+    distribution: categorical
+    values: [0.0, 0.1, 0.2, 0.3]
+  dropout:
+    distribution: categorical
+    values: [0.6, 0.7, 0.8, 0.9]
+  lr:
+    value: 0.02
+  epochs:
+    distribution: constant
+    value: 1000
+  early_stopping:
+    distribution: constant
+    value: 400
+  folds:
+    distribution: constant
+    value: 10
+  sparse_learner:
+    distribution: categorical
+    values: [ 0,1 ]
+
+  complex_separate_linears:
+    distribution: categorical
+    values: [1,0]
+  complex_separate_dropout:
+    distribution: categorical
+    values: [ 1,0 ]
+  complex_add_block_diag:
+    distribution: categorical
+    values: [1,0]
+  complex_copy_values:
+    distribution: categorical
+    values: [ 1,0 ]
+  complex_use_intro_act:
+    distribution: categorical
+    values: [ 1,0 ]
+  complex_start:
+    distribution: categorical
+    values: [ 1,0 ]
+  complex_activation:
+    distribution: categorical
+    values: [ 'relu','elu' ]
+  complex_q:
+    distribution: categorical
+    values: [ 0.1,0.25,0.5,0.75, 1 ]
+  complex_x_dropout:
+    distribution: categorical
+    values: [ 0.5, 0.6, 0.7, 0.8, 0.9 ]
+
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+  - --left_weights=True
+  - --right_weights=True
+  - --use_act=True
+  - --normalised=True
+  - --edge_weights=True
+  - --entity=${ENTITY}

@@ -1,0 +1,38 @@
+name: dsnn
+channels:
+  - dglteam/label/th21_cu121
+  - pytorch
+  - nvidia
+  - stellargraph
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.9
+  - pip
+  - pytorch=2.1
+  - pytorch-cuda=12.1
+  - torchvision
+  - torchaudio
+  - dgl
+  - numpy=1.26.4
+  - pandas=2.2.3
+  - scipy=1.13.1
+  - matplotlib=3.9.2
+  - networkx=2.6.3
+  - tqdm=4.67.1
+  - chardet=3.0.4
+  - stellargraph
+
+  - pip:
+      - --find-links https://data.pyg.org/whl/torch-2.1.0+cu121.html
+      - torch-geometric==2.6.1
+      - torch_geometric_signed_directed==1.0.1
+      - torch-scatter==2.1.2
+      - torch-sparse==0.6.18
+      - torch_householder==1.0.1
+      - torchdiffeq==0.2.5
+      - tensorflow-cpu==2.11.0
+      - wandb==0.15.2
+      - ogb==1.3.6
+      - gdown==5.2.0

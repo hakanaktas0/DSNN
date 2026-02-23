@@ -1,0 +1,95 @@
+program: exp/run.py
+method: grid
+metric:
+  name: val_acc
+  goal: grid
+parameters:
+  model:
+    distribution: constant
+    value: "DiagSheaf"
+  d:
+    distribution: constant
+    values: 4
+  add_lp:
+    distribution: constant
+    values: 0
+  add_hp:
+    distribution: constant
+    values: 1
+  synthetic:
+    distribution: constant
+    value: 1
+  dataset:
+    distribution: categorical
+    value: ['dataset_nodes500_alpha0.05_beta0.2','dataset_nodes500_alpha0.08_beta0.2','dataset_nodes500_alpha0.1_beta0.2']
+  layers:
+    distribution: constant
+    values: 2
+  hidden_channels:
+    distribution: constant
+    values: 8
+  weight_decay:
+    distribution: constant
+    value: 0.0006914841722570725
+  sheaf_decay:
+    distribution: constant
+    value: 0.00031764232712732976
+  input_dropout:
+    distribution: constant
+    values: 0.1
+  dropout:
+    distribution: constant
+    values: 0.7
+  lr:
+    value: 0.02
+  epochs:
+    distribution: constant
+    value: 1000
+  early_stopping:
+    distribution: constant
+    value: 400
+  folds:
+    distribution: constant
+    value: 10
+
+  complex_separate_linears:
+    distribution: constant
+    values: 1
+  complex_separate_dropout:
+    distribution: constant
+    values: 0
+  complex_add_block_diag:
+    distribution: constant
+    values: 0
+  complex_copy_values:
+    distribution: constant
+    values: 0
+  complex_use_intro_act:
+    distribution: constant
+    values: 0
+  complex_start:
+    distribution: constant
+    values: 1
+  complex_activation:
+    distribution: constant
+    values: 'elu'
+  complex_q:
+    distribution: categorical
+    values: [0,0.05, 0.1,0.15,0.2,0.25]
+  complex_x_dropout:
+    distribution: constant
+    values: 0.6
+  sparse_learner:
+    distribution: constant
+    values: 1
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+  - --left_weights=True
+  - --right_weights=True
+  - --use_act=True
+  - --normalised=True
+  - --edge_weights=True
+  - --entity=${ENTITY}

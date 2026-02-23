@@ -1,0 +1,13 @@
+.DS_Store
+/__pycache__
+/.idea
+/dataset_2
+/datasets/arxiv_year/
+/datasets/snap_patents/
+/datasets/ogbn_arxiv/
+/wandb
+/exp/__pycache__
+/exp/__pycache__
+/utils/__pycache__
+/exp/splits
+/utils/splits
