@@ -1,15 +1,17 @@
 # Sheaves Reloaded: A Directional Awakening
 
 <a href="https://arxiv.org/abs/2506.02842"><img src="https://img.shields.io/badge/arXiv-2506.02842-%23B31B1B"></a>
+[![License: MIT](https://img.shields.io/badge/License-Apache%202-green.svg)](https://github.com/hakanaktas0/DSNN/blob/main/LICENSE)
 
 
-This is the official implementation of the paper "Sheaves Reloaded: A Directional Awakening"
+This is the official implementation of the paper **"Sheaves Reloaded: A Directional Awakening" (ICLR 2026)**
 
 by [Stefano Fiorini](https://scholar.google.com/citations?user=2O-BN9YAAAAJ&hl=it)<sup>+</sup>, [Hakan Aktas](https://www.cst.cam.ac.uk/people/hea39)<sup>+</sup>, [Iulia Duta](https://iuliaduta.github.io/), [Pietro Morerio](https://scholar.google.com/citations?user=lPV9rbkAAAAJ&hl=it),
 [Alessio Del Bue](https://scholar.google.co.uk/citations?user=LUzvbGIAAAAJ&hl=en), [Pietro Lio](https://www.cl.cam.ac.uk/~pl219/), [Stefano Coniglio](https://scholar.google.com/citations?user=F9mrD0gAAAAJ&hl=en)
 
 +: Equal Contribution <br>
 
+![Directed Cellular Sheaf](figures/sheaf-directed.png)
 
 ## Installation
 
