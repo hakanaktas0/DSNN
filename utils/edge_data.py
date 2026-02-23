@@ -6,7 +6,8 @@ from scipy.sparse import coo_matrix
 from torch_geometric.data import Data
 from torch import Tensor
 from torch_sparse import SparseTensor, coalesce
-from stellargraph.data import EdgeSplitter
+# from stellargraph.data import EdgeSplitter
+from utils.edge_splitter import EdgeSplitter
 from sklearn.model_selection import train_test_split
 from torch_geometric.utils import negative_sampling, dropout_adj
 from torch_geometric.data import Data
@@ -18,6 +19,7 @@ from torch_scatter import scatter_add
 import scipy
 import os
 from joblib import Parallel, delayed
+
 
 # tell TF to grow the GPU pool as needed instead of grabbing it all at once:
 os.environ["TF_FORCE_GPU_ALLOW_GROWTH"] = "true"
