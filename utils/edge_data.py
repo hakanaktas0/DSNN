@@ -180,7 +180,7 @@ def generate_dataset_3class(edge_index, size, splits = 10, probs = [0.20, 0.35],
     #print( "undirected rate:", 1.0*np.sum(A_dense * A_dense.T)/edge_num )
 
     A = coo_matrix((np.ones(len(row)), (row, col)), shape=(size, size), dtype=np.float32).tocsr()
-    G = nx.from_scipy_sparse_array(A) # create an undirected graph based on the adjacency
+    G = nx.from_scipy_sparse_matrix(A) # create an undirected graph based on the adjacency
 
     def iteration(ind):
         datasets = {}
