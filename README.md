@@ -17,11 +17,6 @@ You can install the environment using the YAML file. We used `CUDA 12.1` for thi
 ```
 conda env create -f environment.yml 
 ```
-Stellargraph is also needed to generate and evaluate on link prediction. We recommend using it with tensorflow-cpu==2.10
-
-```
-conda install stellargraph::stellargraph
-```
 
 ## Running the experiments
 
