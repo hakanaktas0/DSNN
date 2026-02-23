@@ -22,7 +22,6 @@ dependencies:
   - networkx=2.6.3
   - tqdm=4.67.1
   - chardet=3.0.4
-  - stellargraph
 
   - pip:
       - --find-links https://data.pyg.org/whl/torch-2.1.0+cu121.html
