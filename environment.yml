@@ -3,7 +3,6 @@ channels:
   - dglteam/label/th21_cu121
   - pytorch
   - nvidia
-  - stellargraph
   - conda-forge
   - defaults
 
